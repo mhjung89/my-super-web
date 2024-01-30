@@ -1,4 +1,4 @@
-namespace MSW.Web.Models;
+namespace MSW.Web.ViewModels;
 
 public class ErrorViewModel
 {

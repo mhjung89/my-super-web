@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "AES";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-action="Index">Encryption</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">AES</li>
+    </ol>
+</nav>
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="encryptionTypeRadioOptions" id="rdoEncryption" value="encryption" checked>
+    <label class="form-check-label" for="rdoEncryption">암호화</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="encryptionTypeRadioOptions" id="rdoDecryption" value="decryption">
+    <label class="form-check-label" for="rdoDecryption">복호화</label>
+</div>
+<div class="mb-3">
+    <div class="row align-items-start">
+        <div class="col">
+            <label for="txtKey" class="form-label">Key</label>
+            <input type="text" class="form-control" id="txtKey">
+        </div>
+        <div class="col">
+            <label for="txtIv" class="form-label">IV</label>
+            <input type="text" class="form-control" id="txtIv">
+        </div>
+    </div>
+</div>
+<label for="taText" class="form-label">Plain Text or Cipher Text</label>
+<div class="input-group mb-3">
+    <textarea id="taText" class="form-control" cols="30" placeholder="최대 1000자" maxlength="1000"></textarea>
+    <button class="btn btn-outline-primary w-25" type="button" id="btnRun">Run</button>
+</div>
+<label for="taResult" class="form-label">Result</label>
+<div class="input-group mb-3">
+    <textarea id="taResult" class="form-control" cols="30" readonly></textarea>
+    <button class="btn btn-outline-secondary w-25" type="button" id="btnCopy">Copy</button>
+</div>
+
+<script src="~/js/encryption/aes.js" asp-append-version="true"></script>
